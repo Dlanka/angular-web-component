@@ -1,0 +1,88 @@
+<div class="calendar-container">
+    <div class="cln-header">
+        <button type="button" class="cln-btn cln-btn-month-year" (click)="onLoadYears(currentSelectYear)">
+            <span> {{currentSelectMonth}}&nbsp;{{currentSelectYear}}</span>
+        </button>
+        <div class="cln-spacer"></div>
+        <button type="button" class="cln-btn btn-prev">&nbsp;<&nbsp;</button>
+        <button type="button" class="cln-btn btn-next">&nbsp;>&nbsp;</button>
+    </div>
+
+    <div class="cln-content">
+        <table>
+            <thead>
+            <tr *ngIf="!showYear">
+                <th *ngFor="let day of days;">
+                    <div>{{day}}</div>
+                </th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <ng-template [ngIf]="!showYear">
+                <tr>
+                    <td class="cln-td-month">
+                        <div class="month">{{currentSelectMonth}}</div>
+                    </td>
+                </tr>
+                <tr *ngFor="let dataRow of dates;let i = index;">
+
+                    <td *ngIf="i===0 && dataRow.length !== 7" [attr.colspan]="7 - dataRow.length"></td>
+
+                    <td *ngFor="let date of dataRow">
+                        <div>
+                            {{date[0]}}
+                        </div>
+                    </td>
+                </tr>
+            </ng-template>
+
+            <ng-template [ngIf]="showYear">
+                <tr *ngFor="let yearRow of yearsInChunk">
+                    <td *ngFor="let year of yearRow">
+                        <div>{{year}}</div>
+                    </td>
+                </tr>
+            </ng-template>
+
+            </tbody>
+
+
+        </table>
+    </div>
+</div>
+
+<div>
+    <h4>Year</h4>
+    <ul class="flex-list">
+        <li *ngFor="let year of years" (click)="onSelectYear(year)">
+            {{year}}
+        </li>
+    </ul>
+
+    <ul>
+        <li *ngFor="let yearRow of testYear">
+            <div *ngFor="let year of yearRow">{{year}}</div>
+        </li>
+    </ul>
+
+</div>
+<div>
+    <h4>Month</h4>
+    <ul class="flex-list">
+        <li *ngFor="let month of months;let i = index;" (click)="onSelectMonth(i)">
+            {{i}}{{month}}
+        </li>
+    </ul>
+</div>
+
+<div>
+    <h4>Date</h4>
+    <ul class="flex-list">
+        <!--<li *ngFor="let date of dates">-->
+        <!--{{date[1].getDay()}}-->
+        <!--{{days[date[1].getDay()]}}-->
+        <!--{{date[0]}}-->
+        <!--</li>-->
+    </ul>
+</div>

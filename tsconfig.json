@@ -15,6 +15,14 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ng-ui-elements": [
+        "dist/ng-ui-elements"
+      ],
+      "ng-ui-elements/*": [
+        "dist/ng-ui-elements/*"
+      ]
+    }
   }
 }

@@ -125,6 +125,46 @@
           }
         }
       }
+    },
+    "ng-ui-elements": {
+      "root": "projects/ng-ui-elements",
+      "sourceRoot": "projects/ng-ui-elements/src",
+      "projectType": "library",
+      "prefix": "ng",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ng-ui-elements/tsconfig.lib.json",
+            "project": "projects/ng-ui-elements/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/ng-ui-elements/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-ui-elements/src/test.ts",
+            "tsConfig": "projects/ng-ui-elements/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-ui-elements/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng-ui-elements/tsconfig.lib.json",
+              "projects/ng-ui-elements/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ng-web-components"

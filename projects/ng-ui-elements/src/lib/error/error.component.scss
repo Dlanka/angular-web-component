@@ -1,0 +1,14 @@
+@import "../../variable";
+
+ng-error {
+  div {
+    font-size: 12px;
+    color: $warn;
+    display: block;
+    padding: 4px 0;
+
+    ng-error > div {
+      padding: 0;
+    }
+  }
+}

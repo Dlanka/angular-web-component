@@ -1,0 +1,10 @@
+<div [ngSwitch]="viewType">
+
+    <app-month-view *ngSwitchCase="'month'"></app-month-view>
+
+    <app-year-view
+            [selected]="date"
+            *ngSwitchCase="'year'"
+    ></app-year-view>
+
+</div>

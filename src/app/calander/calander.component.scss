@@ -1,0 +1,90 @@
+.calendar-container {
+  display: flex;
+  width: 400px;
+  flex-direction: column;
+  background: #ecf9fc;
+  justify-content: center;
+
+  .cln-btn {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 15px;
+    text-align: center;
+
+    &:hover {
+      background: #ccc;
+    }
+  }
+
+  .cln-spacer {
+    flex: 1 1 auto;
+  }
+
+  .cln-header {
+    padding: 15px;
+    display: flex;
+    .cln-btn-month-year {
+    }
+
+    .btn-next,
+    .btn-prev {
+
+    }
+  }
+
+  .cln-content {
+    padding: 10px;
+    table {
+      width: 100%;
+
+      thead th, tbody td {
+        width: 14.28%;
+        max-width: 1px;
+        min-width: 1px;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+      thead th {
+        color: rgba(0, 0, 0, 0.56);
+        text-transform: uppercase;
+        font-size: 12px;
+      }
+
+      tbody td {
+        div {
+          color: rgba(0, 0, 0, 0.76);
+        }
+
+      }
+
+      tbody td.cln-td-month {
+        text-align: left;
+        padding: 20px 16px;
+
+        .month {
+          text-align: center;
+          padding: 8px 15px;
+          font-size: 16px;
+          font-weight: 500;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
+
+.flex-list {
+  display: flex;
+  justify-content: center;
+
+  li {
+    list-style: none;
+    padding: 0 5px;
+    cursor: pointer;
+  }
+}

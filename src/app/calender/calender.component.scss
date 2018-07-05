@@ -1,0 +1,26 @@
+.calendar-container {
+  display: flex;
+  width: 400px;
+  flex-direction: column;
+  background: #ecf9fc;
+  justify-content: center;
+
+  .cln-btn {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 15px;
+    text-align: center;
+
+    &:hover {
+      background: #ccc;
+    }
+  }
+
+  .cln-spacer {
+    flex: 1 1 auto;
+  }
+
+}

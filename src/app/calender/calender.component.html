@@ -1,0 +1,15 @@
+<div class="calendar-container">
+
+    <app-calender-header
+            [date]="currentDate"
+            [view]="viewType"
+            (changedDate)="onDateChange($event)"
+            (viewChange)="onViewEvent($event)"></app-calender-header>
+
+    <div class="cln-content">
+        <app-calender-body
+                [activeDate]="currentDate"
+                [view]="viewType">
+        </app-calender-body>
+    </div>
+</div>

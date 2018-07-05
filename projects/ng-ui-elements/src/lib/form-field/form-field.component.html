@@ -1,0 +1,17 @@
+<div class="ng-form-field-container">
+    <div class="ng-form-field-input-wrapper">
+        <ng-content></ng-content>
+        <div class="ng-form-label-wrapper">
+            <label class="ng-form-label" [attr.for]="_control.id">
+                <span>{{label}}</span>
+                <span *ngIf="required" class="ng-form-required">*</span>
+            </label>
+        </div>
+    </div>
+    <div class="ng-form-field-input-underline">
+        <div></div>
+    </div>
+    <div class="ng-form-field-error-wrapper">
+        <ng-content select="ng-error"></ng-content>
+    </div>
+</div>

@@ -1,0 +1,113 @@
+@import "../../variable";
+
+$underlineColor: rgba(0, 0, 0, 0.1);
+$fontColor: rgba($black, 0.86);
+$baseFontSize: 16px;
+
+ng-form-field {
+  .ng-form-field-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    padding: 15px 0 10px;
+
+    .ng-form-field-input-wrapper,
+    .ng-form-field-input-underline,
+    .ng-form-field-error-wrapper {
+      width: 100%;
+    }
+
+    .ng-form-field-input-wrapper {
+      input[ngInput] {
+        width: inherit;
+        height: 24px;
+        padding: 0;
+        border: none;
+        z-index: 2;
+        outline: none;
+        font-size: $baseFontSize;
+        background: transparent;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      .ng-form-label-wrapper {
+        position: absolute;
+        left: 0;
+        z-index: -1;
+        top: 18px;
+        font-size: $baseFontSize;
+        color: $fontColor;
+        transition: top ease-out 0.2s;
+
+        .ng-form-label {
+          .ng-form-required {
+            margin-left: 2px;
+          }
+        }
+      }
+    }
+
+    .ng-form-field-input-underline {
+      position: relative;
+      height: 2px;
+      width: 100%;
+      background: $underlineColor;
+
+      div {
+        transition: all ease-in-out 0.3s;
+        position: absolute;
+        height: 2px;
+        top: 0;
+        width: 0;
+        left: 0;
+        background: $primary;
+      }
+    }
+
+    .ng-form-field-error-wrapper {
+    }
+
+  }
+
+  &.ng-form-input-not-empty,
+  &.ng-form-field-focus {
+    .ng-form-field-input-wrapper .ng-form-label-wrapper {
+      top: 0;
+      font-size: $baseFontSize - 4;
+      label {
+        opacity: 0.56;
+      }
+    }
+  }
+
+  // Underline animation run when is input focus
+  &.ng-form-field-focus {
+    .ng-form-field-input-underline {
+      div {
+        width: 100%;
+      }
+    }
+  }
+
+  //Styles for input error
+  &.ng-invalid.ng-touched.ng-form-field-focus,
+  &.ng-invalid.ng-touched {
+
+    .ng-form-label-wrapper {
+      .ng-form-label {
+        color: $warn;
+      }
+    }
+
+    .ng-form-field-input-underline {
+      div {
+        background: $warn;
+        width: 100%;
+      }
+    }
+  }
+}

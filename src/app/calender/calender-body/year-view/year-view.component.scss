@@ -1,0 +1,21 @@
+app-year-view {
+  table {
+    tbody td {
+      div {
+        color: rgba(0, 0, 0, 0.66);
+        border:1px solid transparent;
+        padding: 6px 0;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        border-radius: 15px;
+        cursor: pointer;
+
+        &:hover {
+          color: rgba(0, 0, 0, 0.76);
+          background: #ddd;
+        }
+      }
+
+    }
+  }
+}
