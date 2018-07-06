@@ -1,0 +1,15 @@
+<label [attr.for]="id +'_input'">
+    <input #input
+           [id]="id +'_input'"
+           type="checkbox"
+           [value]="checked ? 1 : 0"
+           [attr.checked]="checked"
+           [attr.aria-checked]="checked">
+    <span class="ng-checkbox-box " [ngClass]="{'ng-checkbox-checked':checked}">
+             <svg *ngIf="checked" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                 viewBox="0 0 14 14" style="enable-background:new 0 0 14 14;" xml:space="preserve">
+                    <path class="ng-check" d="M14,2.6l-8.6,9.9L0,7.8l1-1.2l4.1,3.6l7.6-8.7C12.8,1.6,14,2.6,14,2.6z"/>
+            </svg>
+    </span>
+    <span class="ng-checkbox-text"><ng-content></ng-content></span>
+</label>

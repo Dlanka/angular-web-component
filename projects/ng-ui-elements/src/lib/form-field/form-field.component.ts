@@ -20,6 +20,7 @@ import {NgControl} from '@angular/forms';
         '[class.ng-pending]': 'this.controlStates("pending")',
         '[class.ng-valid]': 'this.controlStates("valid")',
         '[class.ng-invalid]': 'this.controlStates("invalid")',
+        '[class.ng-required]': 'this.required',
     }
 })
 export class FormFieldComponent implements OnInit, AfterContentInit {
@@ -31,7 +32,7 @@ export class FormFieldComponent implements OnInit, AfterContentInit {
     }
 
     ngAfterContentInit() {
-        console.log('Control ', this._control.ngControl.control['errors']);
+
     }
 
     get label(): string {

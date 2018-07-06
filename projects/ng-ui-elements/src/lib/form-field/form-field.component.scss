@@ -19,6 +19,7 @@ ng-form-field {
     }
 
     .ng-form-field-input-wrapper {
+      textarea[ngInput],
       input[ngInput] {
         width: inherit;
         height: 24px;
@@ -32,6 +33,11 @@ ng-form-field {
         &:focus {
           outline: none;
         }
+      }
+
+      textarea[ngInput] {
+        height: auto;
+        resize: vertical;
       }
 
       .ng-form-label-wrapper {
@@ -94,8 +100,8 @@ ng-form-field {
   }
 
   //Styles for input error
-  &.ng-invalid.ng-touched.ng-form-field-focus,
-  &.ng-invalid.ng-touched {
+  &.ng-invalid.ng-touched.ng-required.ng-form-field-focus,
+  &.ng-invalid.ng-touched.ng-required {
 
     .ng-form-label-wrapper {
       .ng-form-label {

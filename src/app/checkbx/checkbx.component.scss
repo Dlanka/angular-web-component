@@ -1,0 +1,17 @@
+app-checkbx {
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  .ng-checkbox-box {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.15);
+
+    &.ng-checkbox-checked {
+      background: #5a35ea;
+    }
+  }
+}

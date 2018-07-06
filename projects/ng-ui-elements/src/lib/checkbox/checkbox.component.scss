@@ -1,0 +1,40 @@
+@import "../../variable";
+
+$baseFontSize: 16px;
+
+ng-checkbox {
+  display: inline-block;
+  vertical-align: middle;
+
+  input[type="checkbox"] {
+    display: none;
+  }
+  .ng-checkbox-text,
+  .ng-checkbox-box {
+    vertical-align: middle;
+  }
+  .ng-checkbox-box {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    border: 2px solid rgba($black, 0.15);
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+
+    &.ng-checkbox-checked {
+      background: $primary;
+      border-color: $primary;
+
+      .ng-check {
+        fill: $white;
+      }
+    }
+  }
+
+  .ng-checkbox-text {
+    font-size: $baseFontSize;
+    color: $black;
+    margin-left: 5px;
+  }
+}

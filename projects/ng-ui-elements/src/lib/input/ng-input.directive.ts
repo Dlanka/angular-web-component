@@ -111,7 +111,6 @@ export class NgInputDirective {
     set required(value: boolean) {
 
         if (typeof value === 'string') {
-            console.log('value ', typeof value);
             this._required = true;
         } else {
             this._required = value;

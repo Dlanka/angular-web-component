@@ -1,24 +1,4 @@
-<!-- <input type="text" ngInput maxlength="12" minlength="2" > -->
 
-<!-- <div class="ng-form-field-container">
-    <div class="ng-form-field-input-wrapper">
-        <input type="text" ngInput>
-        <div class="ng-form-label-wrapper">
-            <label class="ng-form-label ng-label-focus" for="">
-                <span>Label</span>
-                <span class="ng-form-required">*</span>
-            </label>
-        </div>
-    </div>
-    <div class="ng-form-field-input-underline">
-      <div></div>
-    </div>
-    <div class="ng-form-field-error-wrapper"></div>
-</div> -->
-
-<!--<app-calander></app-calander>-->
-<!-- <app-calender></app-calender> -->
-<!-- <app-test></app-test> -->
 
 
 <form [formGroup]="testForm" (ngSubmit)="onSubmit()">
@@ -31,10 +11,35 @@
                 ngInput>
         <ng-error *ngIf="!name.untouched">
             <ng-error *ngIf="name.hasError('required')">This field is required</ng-error>
-            <ng-error *ngIf="name.hasError('email')">Invalid Email</ng-error>
         </ng-error>
     </ng-form-field>
 
+    <ng-form-field>
+        <input
+                type="text"
+                label="Email"
+                formControlName="email"
+                ngInput>
+        <ng-error *ngIf="!email.untouched">
+        <ng-error *ngIf="email.hasError('required')">This field is required</ng-error>
+        <ng-error *ngIf="email.hasError('email')">Invalid Email</ng-error>
+        </ng-error>
+    </ng-form-field>
+
+    <ng-form-field>
+        <textarea required ngInput label="Address"
+                   formControlName="address"></textarea>
+        <!--<ng-error *ngIf="!email.untouched">-->
+        <!--<ng-error *ngIf="email.hasError('required')">This field is required</ng-error>-->
+        <!--<ng-error *ngIf="email.hasError('email')">Invalid Email</ng-error>-->
+        <!--</ng-error>-->
+    </ng-form-field>
+
+    <ng-checkbox formControlName="check_me">Check Me</ng-checkbox>
+    <ng-checkbox formControlName="check_me2">Check Me 2</ng-checkbox>
+
+    <!--<app-switch formControlName="check_me" [label]="'My Switch'"></app-switch>-->
     <button type="submit">Add</button>
 
 </form>
+

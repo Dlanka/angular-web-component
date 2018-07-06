@@ -6,16 +6,21 @@ import {NgUiElementsModule} from 'ng-ui-elements';
 import { CalanderComponent } from './calander/calander.component';
 import {CalenderModule} from './calender/calender.module';
 import {TestModule} from './test/test.module';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { CheckbxComponent } from './checkbx/checkbx.component';
+import { SwitchComponent } from './switch/switch.component';
 
 
 @NgModule({
     declarations: [
         AppComponent,
-        CalanderComponent
+        CalanderComponent,
+        CheckbxComponent,
+        SwitchComponent
     ],
     imports: [
         BrowserModule,
+        FormsModule,
         NgUiElementsModule,
         CalenderModule,
         TestModule,

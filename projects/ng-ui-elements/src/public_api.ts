@@ -9,3 +9,5 @@ export * from './lib/input/index';
 export * from './lib/form-field';
 export * from './lib/calendar';
 export * from './lib/error';
+export * from './lib/checkbox';
+
