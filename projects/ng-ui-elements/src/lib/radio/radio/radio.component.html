@@ -1,0 +1,17 @@
+<label class="ng-radio-button-label" [for]="inputId" #label>
+  <div class="ng-radio-circle">
+    <span class="ng-radio-inner-circle"></span>
+  </div>
+  <input  #input
+          [id]="inputId"
+          type="radio"
+          [name]="name"
+          (change)="_onInputChange($event)"
+          (click)="_onClickInput($event)"
+  >
+  <div class="ng-radio-label-container">
+        <span class="ng-radio-label">
+            <ng-content></ng-content>
+        </span>
+  </div>
+</label>

@@ -1,29 +1,26 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import {AppComponent} from './app.component';
 import {NgUiElementsModule} from 'ng-ui-elements';
 import { CalanderComponent } from './calander/calander.component';
 import {CalenderModule} from './calender/calender.module';
-import {TestModule} from './test/test.module';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { CheckbxComponent } from './checkbx/checkbx.component';
-import { SwitchComponent } from './switch/switch.component';
+import { TestDirective } from './test.directive';
+
 
 
 @NgModule({
     declarations: [
         AppComponent,
         CalanderComponent,
-        CheckbxComponent,
-        SwitchComponent
+        TestDirective,
     ],
     imports: [
         BrowserModule,
         FormsModule,
         NgUiElementsModule,
         CalenderModule,
-        TestModule,
         ReactiveFormsModule
     ],
     providers: [],

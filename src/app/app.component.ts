@@ -12,6 +12,12 @@ export class AppComponent implements OnInit {
     _checkbox = true;
     checkVal = false;
 
+    vehicles = [
+        {text: 'Car', val: 'car'},
+        {text: 'Bike', val: 'bike'},
+        {text: 'Van', val: 'van'},
+    ];
+
     testForm: FormGroup;
 
     ngOnInit() {
@@ -21,6 +27,8 @@ export class AppComponent implements OnInit {
             'address': new FormControl('', [Validators.required]),
             'check_me': new FormControl(false),
             'check_me2': new FormControl(true),
+            // 'vechicel': new FormControl('car'),
+            'vechicel2': new FormControl(this.vehicles[2].val),
         });
     }
 
@@ -39,5 +47,9 @@ export class AppComponent implements OnInit {
     onSubmit() {
         console.log(this.testForm.value);
         // this.testForm.reset({'check_me': true});
+    }
+
+    _onRadioChage(e) {
+        console.log(e);
     }
 }

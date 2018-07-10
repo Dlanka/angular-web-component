@@ -1,6 +1,4 @@
-
-
-
+<!--<test id="thisisid">asas</test>-->
 <form [formGroup]="testForm" (ngSubmit)="onSubmit()">
     <ng-form-field>
         <input
@@ -21,14 +19,14 @@
                 formControlName="email"
                 ngInput>
         <ng-error *ngIf="!email.untouched">
-        <ng-error *ngIf="email.hasError('required')">This field is required</ng-error>
-        <ng-error *ngIf="email.hasError('email')">Invalid Email</ng-error>
+            <ng-error *ngIf="email.hasError('required')">This field is required</ng-error>
+            <ng-error *ngIf="email.hasError('email')">Invalid Email</ng-error>
         </ng-error>
     </ng-form-field>
 
     <ng-form-field>
-        <textarea required ngInput label="Address"
-                   formControlName="address"></textarea>
+<textarea required ngInput label="Address"
+          formControlName="address"></textarea>
         <!--<ng-error *ngIf="!email.untouched">-->
         <!--<ng-error *ngIf="email.hasError('required')">This field is required</ng-error>-->
         <!--<ng-error *ngIf="email.hasError('email')">Invalid Email</ng-error>-->
@@ -38,8 +36,14 @@
     <ng-checkbox formControlName="check_me">Check Me</ng-checkbox>
     <ng-checkbox formControlName="check_me2">Check Me 2</ng-checkbox>
 
-    <!--<app-switch formControlName="check_me" [label]="'My Switch'"></app-switch>-->
+    <ng-radio-group [name]="'vehicles_arr'" [formControlName]="'vechicel2'">
+        <ng-radio *ngFor="let v of vehicles" [value]="v.val">{{v.text}}</ng-radio>
+    </ng-radio-group>
+
     <button type="submit">Add</button>
 
+
 </form>
+
+
 

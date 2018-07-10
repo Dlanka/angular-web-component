@@ -1,9 +1,0 @@
-<label [attr.for]="id +'_input'">
-    <input #input [id]="id +'_input'"
-           type="checkbox"
-           [value]="value"
-           [attr.checked]="value"
-           [attr.aria-checked]="value">
-    <span class="ng-checkbox-box " [ngClass]="{'ng-checkbox-checked':value}"></span>
-    <span><ng-content></ng-content></span>
-</label>

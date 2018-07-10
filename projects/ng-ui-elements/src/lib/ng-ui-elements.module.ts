@@ -6,6 +6,8 @@ import {FormFieldModule} from './form-field/form-field.module';
 import {CalendarModule} from './calendar/calendar.module';
 import {NgErrorModule} from './error/error.module';
 import {CheckboxModule} from './checkbox/checkbox.module';
+import {RadioModule} from './radio/radio.module';
+
 
 @NgModule({
     imports: [
@@ -20,6 +22,7 @@ import {CheckboxModule} from './checkbox/checkbox.module';
         FormFieldModule,
         NgErrorModule,
         CheckboxModule,
+        RadioModule,
         CalendarModule,
     ]
 })
