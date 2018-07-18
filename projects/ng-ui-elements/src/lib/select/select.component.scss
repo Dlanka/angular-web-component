@@ -1,0 +1,119 @@
+@import '../../variable';
+
+ng-select {
+  position: relative;
+
+  .ng-select-container {
+    position: relative;
+    padding: 15px 0 10px;
+
+    .ng-select-label {
+      position: absolute;
+      top: 18px;
+      transition: all ease-in-out 0.3s;
+
+      label {
+        font-size: 16px;
+        color: $black;
+      }
+    }
+
+    .ng-selected-container {
+      height: 24px;
+      display: flex;
+      flex: 1;
+      align-items: center;
+
+      .ng-selected-value {
+        font-size: 16px;
+      }
+    }
+
+    .ng-select-top {
+      cursor: pointer;
+      outline: none;
+    }
+
+    .ng-select-underline {
+      width: 100%;
+      position: relative;
+      height: 2px;
+      background: rgba($black, 0.1);
+
+      div {
+        transition: all ease-in-out 0.3s;
+        position: absolute;
+        top: 0;
+        width: 0;
+        height: 2px;
+        left: 0;
+        background: $primary;
+      }
+    }
+  }
+
+  .ng-select-options {
+    position: absolute;
+    display: none;
+    top: 42px;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    background: #fff;
+    box-shadow: 0 1px 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  //
+  &.ng-select-not-empty,
+  &.ng-select-focus {
+    .ng-select-label {
+      top: 0;
+
+      label {
+        font-size: 12px;
+        color: rgba($color: #000000, $alpha: 0.56);
+      }
+    }
+  }
+
+  &.ng-select-focus {
+    .ng-select-underline {
+      div {
+        width: 100%;
+      }
+    }
+  }
+
+  &.ng-select-disabled {
+    .ng-select-container {
+      opacity: 0.5;
+      pointer-events: none;
+      .ng-select-top {
+        cursor: auto;
+      }
+    }
+  }
+
+  &.ng-open:not(.ng-select-disabled) {
+    .ng-select-options {
+      display: block;
+    }
+  }
+
+  &.ng-invalid.ng-touched {
+    .ng-selected-container,
+    .ng-select-label label {
+      color: $warn;
+    }
+
+    .ng-select-underline div {
+      background: $warn;
+    }
+  }
+
+  &.ng-select-scroll {
+    .ng-select-options {
+      overflow-y: scroll;
+    }
+  }
+}

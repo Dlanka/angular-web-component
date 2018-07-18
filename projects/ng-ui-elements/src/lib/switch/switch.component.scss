@@ -1,0 +1,108 @@
+@import "../../variable";
+
+$bar-width: 36px;
+$bar-height: 20px;
+$bar-radius: 15px;
+$bar-color: #dddddd;
+$bar-border-color: #dddddd;
+
+$handler-size: 20px;
+$handler-def-color: $white;
+$handler-checked-offset: $bar-width - $handler-size;
+$handler-checked-color: $primary;
+
+.ng-switch-group.ng-switch-group-disabled {
+  ng-switch.ng-switch {
+    pointer-events: none;
+  }
+}
+
+ng-switch.ng-switch {
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  max-width: 100%;
+  height: $handler-size;
+  padding-right: 35px;
+
+  input[type="checkbox"], input[type="radio"] {
+    display: none;
+  }
+
+  .ng-switch-container {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .ng-switch-bar {
+    position: relative;
+    width: $bar-width;
+    height: $bar-height;
+    background: $bar-color;
+    -webkit-border-radius: $bar-radius;
+    -moz-border-radius: $bar-radius;
+    border-radius: $bar-radius;
+    border: 2px solid $bar-border-color;
+    order: 2;
+    margin-left: 10px;
+
+    .ng-switch-status {
+      font-size: 12px;
+      color: rgba(0, 0, 0, 0.56);
+      width: 100%;
+      display: block;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      position: relative;
+      overflow: hidden;
+      left: 40px;
+      top: 4px;
+      padding-left: 2px;
+      text-transform: uppercase;
+    }
+
+    .ng-switch-handler {
+      position: absolute;
+      width: $handler-size;
+      left: 0;
+      top: 0;
+      height: $handler-size;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      background: $handler-def-color;
+      -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+      -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+      -webkit-transition: left ease-in 0.2s;
+      -moz-transition: left ease-in 0.2s;
+      -ms-transition: left ease-in 0.2s;
+      -o-transition: left ease-in 0.2s;
+      transition: left ease-in 0.2s;
+    }
+  }
+
+  .ng-switch-label {
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.86);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &.ng-switch-checked {
+    .ng-switch-handler {
+      left: $handler-checked-offset;
+      background: $handler-checked-color;
+    }
+  }
+
+  &.ng-switch-disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+}
+

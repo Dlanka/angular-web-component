@@ -1,0 +1,21 @@
+<label class="ng-switch-container"
+       [attr.for]="id"
+       (click)="_onSwitchClick($event)"
+       (change)="_onSwitchChange($event)"
+>
+    <div class="ng-switch-bar">
+        <input [type]="type"
+               [id]="id"
+               [name]="name"
+               [value]="value"
+               [checked]="checked"
+               [required]="required"
+               [disabled]="disabled"
+        >
+        <div class="ng-switch-handler"></div>
+        <span class="ng-switch-status">{{checked ? onLabel : offLabel}}</span>
+    </div>
+    <span class="ng-switch-label">
+        <ng-content></ng-content>
+    </span>
+</label>

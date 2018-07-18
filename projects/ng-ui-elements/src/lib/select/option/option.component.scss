@@ -1,0 +1,28 @@
+@import '../../../variable';
+ng-option {
+  display: block;
+  &:not(:last-child) {
+    margin-bottom: 2px;
+  }
+  .ng-option-container {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    padding: 10px 15px;
+    cursor: pointer;
+
+    .ng-option-text {
+      font-size: 16px;
+    }
+
+    &:hover {
+      background: rgba($color: $black, $alpha: 0.05);
+    }
+  }
+
+  &.ng-option-checked {
+    .ng-option-container {
+      background: rgba($black, 0.15);
+    }
+  }
+}

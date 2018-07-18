@@ -7,6 +7,9 @@ import {CalendarModule} from './calendar/calendar.module';
 import {NgErrorModule} from './error/error.module';
 import {CheckboxModule} from './checkbox/checkbox.module';
 import {RadioModule} from './radio/radio.module';
+import {SwitchModule} from './switch/switch.module';
+import {ButtonModule} from './button/button.module';
+import {SelectModule} from './select/select.module';
 
 
 @NgModule({
@@ -23,6 +26,9 @@ import {RadioModule} from './radio/radio.module';
         NgErrorModule,
         CheckboxModule,
         RadioModule,
+        SwitchModule,
+        ButtonModule,
+        SelectModule,
         CalendarModule,
     ]
 })

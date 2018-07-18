@@ -1,0 +1,30 @@
+<div class="ng-select-container" #selectContainer>
+  <div class="ng-select-top" tabindex="0" (click)="_onSelectClick($event)" (focus)="_onFocus($event,true)" (blur)="_blur()">
+    <div class="ng-select-label">
+      <label *ngIf="label">
+        <span>{{label}}</span>
+        <span>*</span>
+      </label>
+    </div>
+
+    <div class="ng-selected-container">
+      <div class="ng-selected-value">
+        {{getValueText()}}
+      </div>
+      <div class="ng-arrow"></div>
+    </div>
+  </div>
+
+  <div class="ng-select-underline">
+    <div></div>
+  </div>
+
+  <div class="ng-select-options" #options>
+    <ng-content></ng-content>
+  </div>
+
+  <div class="ng-select-error">
+    <ng-content select="ng-error"></ng-content>
+  </div>
+
+</div>

@@ -1,0 +1,32 @@
+@import "../../variable";
+
+$button-def-color: rgba(0, 0, 0, 0.16);
+
+.ng-button {
+  box-sizing: border-box;
+  display: inline-block;
+  border: none;
+  outline: 0;
+  overflow: visible;
+  white-space: nowrap;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 0 15px;
+  min-width: 88px;
+  cursor: pointer;
+  line-height: 31px;
+  text-align: center;
+  text-decoration: none;
+  background: $button-def-color;
+
+  span {
+    font-size: 14px;
+    color: $black;
+    text-transform: uppercase;
+  }
+}
