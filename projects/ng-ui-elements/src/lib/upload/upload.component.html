@@ -1,0 +1,28 @@
+<div class="ng-upload-label" *ngIf="showLabel">
+  <span>
+    <ng-content></ng-content>
+  </span>
+  <span *ngIf="required">*</span>
+</div>
+
+<div class="ng-upload-container">
+  <div class="ng-upload-button-warp">
+
+    <div class="ng-upload-button" (click)="_onClick()">
+      <input #file type="file" [id]="id+'_file'" [name]="name" [required]="required" (change)="_fileUploadChange($event)">
+      {{buttonText}}
+    </div>
+  </div>
+  <div class="ng-upload-list">
+    <ng-container *ngIf="showItem">
+        <div class="ng-upload-item" *ngFor="let file of uploadFiles; let i = index;">
+            <span>{{file.name}}</span>
+            <span (click)="removeFile(i)">icon</span>
+          </div>
+    </ng-container>
+
+  </div>
+</div>
+<div class="ng-upload-error">
+  <span *ngIf="errorMessage">{{errorMessage}}</span>
+</div>

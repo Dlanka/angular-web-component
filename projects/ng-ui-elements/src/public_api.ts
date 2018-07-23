@@ -13,4 +13,5 @@ export * from './lib/radio';
 export * from './lib/switch';
 export * from './lib/button';
 export * from './lib/select';
+export * from './lib/upload';
 

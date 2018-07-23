@@ -7,6 +7,8 @@ import {NgUiElementsModule} from 'ng-ui-elements';
 import { CalanderComponent } from './calander/calander.component';
 import {CalenderModule} from './calender/calender.module';
 import { TestDirective } from './test.directive';
+import { HierarchyComponent } from './hierarchy/hierarchy.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -15,13 +17,15 @@ import { TestDirective } from './test.directive';
         AppComponent,
         CalanderComponent,
         TestDirective,
+        HierarchyComponent,
     ],
     imports: [
         BrowserModule,
         FormsModule,
         NgUiElementsModule,
         CalenderModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        HttpClientModule
     ],
     providers: [],
     bootstrap: [AppComponent]

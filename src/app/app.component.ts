@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -22,6 +23,7 @@ export class AppComponent implements OnInit {
   testForm: FormGroup;
 
   ngOnInit() {
+
     this.testForm = new FormGroup({
       name: new FormControl(''),
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -33,12 +35,17 @@ export class AppComponent implements OnInit {
       switch1: new FormControl(true),
       switch2: new FormControl(true),
       sw_vehicle: new FormControl('van'),
-      select: new FormControl('', [Validators.required])
+      select: new FormControl('', [Validators.required]),
+      uploadf: new FormControl('')
     });
   }
 
   get select() {
     return this.testForm.get('select');
+  }
+
+  get uploadf() {
+    return this.testForm.get('uploadf');
   }
 
   get name() {

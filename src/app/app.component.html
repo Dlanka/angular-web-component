@@ -1,68 +1,89 @@
-<!--<test id="thisisid">asas</test>-->
-<form [formGroup]="testForm" (ngSubmit)="onSubmit()">
-  <ng-form-field>
-    <input type="text" label="Name" formControlName="name" required ngInput>
-    <ng-error *ngIf="!name.untouched">
-      <ng-error *ngIf="name.hasError('required')">This field is required</ng-error>
-    </ng-error>
-  </ng-form-field>
+<app-hierarchy >
+</app-hierarchy>
 
-  <ng-form-field>
-    <input type="text" label="Email" formControlName="email" ngInput>
-    <ng-error *ngIf="!email.untouched">
-      <ng-error *ngIf="email.hasError('required')">This field is required</ng-error>
-      <ng-error *ngIf="email.hasError('email')">Invalid Email</ng-error>
-    </ng-error>
-  </ng-form-field>
+<div *ngIf="false">
+  <form [formGroup]="testForm" (ngSubmit)="onSubmit()">
+    <div>
+      <h4>Input and Textarea</h4>
 
-  <ng-form-field>
-    <textarea required ngInput label="Address" formControlName="address"></textarea>
-    <!--<ng-error *ngIf="!email.untouched">-->
-    <!--<ng-error *ngIf="email.hasError('required')">This field is required</ng-error>-->
-    <!--<ng-error *ngIf="email.hasError('email')">Invalid Email</ng-error>-->
-    <!--</ng-error>-->
-  </ng-form-field>
+      <ng-form-field>
+        <input type="text" label="Name" formControlName="name" required ngInput>
+        <ng-error *ngIf="!name.untouched">
+          <ng-error *ngIf="name.hasError('required')">This field is required</ng-error>
+        </ng-error>
+      </ng-form-field>
 
-  <div>
-    <ng-checkbox formControlName="check_me">Check Me</ng-checkbox>
-    <ng-checkbox formControlName="check_me2">Check Me 2</ng-checkbox>
-  </div>
+      <ng-form-field>
+        <input type="text" label="Email" formControlName="email" ngInput>
+        <ng-error *ngIf="!email.untouched">
+          <ng-error *ngIf="email.hasError('required')">This field is required</ng-error>
+          <ng-error *ngIf="email.hasError('email')">Invalid Email</ng-error>
+        </ng-error>
+      </ng-form-field>
 
-  <div>
-    <ng-radio-group [name]="'vehicles_arr'" [formControlName]="'vechicel2'">
-      <ng-radio *ngFor="let v of vehicles" [value]="v.val">{{v.text}}</ng-radio>
-    </ng-radio-group>
-  </div>
+      <ng-form-field>
+        <textarea required ngInput label="Address" formControlName="address"></textarea>
+        <!--<ng-error *ngIf="!email.untouched">-->
+        <!--<ng-error *ngIf="email.hasError('required')">This field is required</ng-error>-->
+        <!--<ng-error *ngIf="email.hasError('email')">Invalid Email</ng-error>-->
+        <!--</ng-error>-->
+      </ng-form-field>
 
+    </div>
 
-  <div>
-    <ng-switch [formControlName]="'switch1'">Simple Toggle Switch</ng-switch>
-    <ng-switch (change)="_onSwitch($event)" [formControlName]="'switch2'" onLabel="Yes" offLabel="No">Simple Toggle Switch</ng-switch>
-  </div>
+    <div>
+      <h4>Checkbox</h4>
+      <ng-checkbox formControlName="check_me">Check Me</ng-checkbox>
+      <ng-checkbox formControlName="check_me2">Check Me 2</ng-checkbox>
+    </div>
 
-  <div>
-    <h4>Switch Group</h4>
-    <ng-switch-group  formControlName="sw_vehicle" on="Yes" off="No" (change)="_swirchGroupChange($event)" [name]="'vechicel_sw'">
-      <ng-switch [value]="'car'">Is Car</ng-switch>
-      <ng-switch [value]="'van'">Is Van</ng-switch>
-    </ng-switch-group>
-  </div>
-  <button type="submit" ng-button>Add</button>
-  <div>
-    <ng-select [label]="'Select'" [disabledControl]="true" [multiple]="false" formControlName="select" [required]="true">
-      <ng-option>None</ng-option>
-      <ng-option [value]="'option1'">Option 1</ng-option>
-      <ng-option [value]="'option2'">Option 2</ng-option>
-      <ng-error *ngIf="!select.untouched">
-        <ng-error *ngIf="select.hasError('required')">This field is required</ng-error>
-      </ng-error>
-    </ng-select>
+    <div>
+      <h4>Radio Group</h4>
+      <ng-radio-group [name]="'vehicles_arr'" [formControlName]="'vechicel2'">
+        <ng-radio *ngFor="let v of vehicles" [value]="v.val">{{v.text}}</ng-radio>
+      </ng-radio-group>
+    </div>
 
 
+    <div>
+      <h4>Switch </h4>
+      <ng-switch [formControlName]="'switch1'">Simple Toggle Switch</ng-switch>
+      <ng-switch (change)="_onSwitch($event)" [formControlName]="'switch2'" onLabel="Yes" offLabel="No">Simple Toggle Switch</ng-switch>
+    </div>
 
-  </div>
+    <div>
+      <h4>Switch Group</h4>
+      <ng-switch-group formControlName="sw_vehicle" on="Yes" off="No" (change)="_swirchGroupChange($event)" [name]="'vechicel_sw'">
+        <ng-switch [value]="'car'">Is Car</ng-switch>
+        <ng-switch [value]="'van'">Is Van</ng-switch>
+      </ng-switch-group>
+    </div>
+
+    <div>
+      <h4>Select</h4>
+
+      <ng-select [label]="'Select'" [disabledControl]="false" [multiple]="true" formControlName="select" [required]="true">
+        <ng-option>None</ng-option>
+        <ng-option [value]="'option1'">Option 1</ng-option>
+        <ng-option [value]="'option2'">Option 2</ng-option>
+        <ng-error *ngIf="!select.untouched">
+          <ng-error *ngIf="select.hasError('required')">This field is required</ng-error>
+        </ng-error>
+      </ng-select>
+    </div>
+
+    <div>
+      <h4>File Uploader</h4>
+      <ng-upload formControlName="uploadf" [required]="true">Upload files</ng-upload>
+    </div>
+
+
+    <div>
+      <button type="submit" ng-button>Add</button>
+    </div>
 
 
 
 
-</form>
+  </form>
+</div>

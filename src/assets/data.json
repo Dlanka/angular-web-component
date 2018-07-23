@@ -1,0 +1,21 @@
+{
+  "name": "Top Level",
+  "children": [
+    {
+      "name": "Level 2: A",
+      "children": [{"name": "dddddddddd"}]
+    },
+    {
+      "name": "Level 2: B"
+    },
+    {
+      "name": "Level 3: B"
+    },
+    {
+      "name": "Level 4: B"
+    },
+    {
+      "name": "Level 5: B"
+    }
+  ]
+}

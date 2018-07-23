@@ -1,0 +1,84 @@
+@import '../../variable';
+
+ng-upload {
+  display: inline-block;
+
+  .ng-upload-label {
+    font-size: 12px;
+    margin-bottom: 5px;
+    color: rgba(#000000, 0.56);
+  }
+
+  .ng-upload-container {
+    display: flex;
+    flex: 1;
+    align-items: center;
+  }
+
+  .ng-upload-button-warp {
+    display: flex;
+    flex-direction: column;
+
+    .ng-upload-button {
+      cursor: pointer;
+      position: relative;
+      line-height: 30px;
+      padding: 0 16px;
+      font-size: 12px;
+      background: #ddd;
+      color: #000;
+      border-radius: 2px;
+      text-align: center;
+      text-transform: uppercase;
+
+      input[type='file'] {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        opacity: 0;
+      }
+    }
+  }
+
+  .ng-upload-list {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+
+    .ng-upload-item {
+      padding: 5px;
+
+      span:first-child {
+        font-size: 12px;
+        display: inline-block;
+        overflow: hidden;
+        vertical-align: middle;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 100px;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .ng-upload-error {
+    display: inline-block;
+    span {
+      color: rgb(255, 43, 43);
+      font-size: 12px;
+      margin: 2px 0;
+    }
+  }
+
+  &.ng-touched.ng-invalid.ng-upload-required {
+    .ng-upload-label {
+      color: $warn;
+    }
+  }
+}

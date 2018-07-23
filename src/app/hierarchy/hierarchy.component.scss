@@ -1,0 +1,39 @@
+html {
+  overflow: hidden;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #dbfff7;
+}
+
+.node-card {
+  fill: #fff;
+  stroke: #f5d5f7;
+  /*stroke: #0693cc;*/
+  stroke-width: 2px;
+}
+
+.node-card.hover {
+  stroke: #0693cc;
+}
+
+.node-card.selected {
+  stroke: #036772;
+}
+
+.node text {
+  font: 12px sans-serif;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 2px;
+}
